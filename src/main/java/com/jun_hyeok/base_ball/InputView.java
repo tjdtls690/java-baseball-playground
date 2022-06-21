@@ -8,15 +8,35 @@ public class InputView {
     private final BaseballGamePlayer bp;
     private final BufferedReader br;
 
-    private static final String startMessage = "숫자야구게임에 오신 것을 환영합니다.";
+    private static final String START_MESSAGE = "숫자야구게임에 오신 것을 환영합니다.";
+    private static final String RESTART_QUESTION = "게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.";
 
     public InputView() {
         bp = new BaseballGamePlayer();
         br = new BufferedReader(new InputStreamReader(System.in));
     }
 
-    static void startMessagePrint(){
-        System.out.println(startMessage);
+    boolean restartMessageAndSelect(){
+        int correctNumCheck = 0;
+        while(correctNumCheck < 1 || correctNumCheck > 2){
+            System.out.println(RESTART_QUESTION);
+            correctNumCheck = getSelectNum();
+        }
+
+        return correctNumCheck == 1;
+    }
+
+    private int getSelectNum() {
+        try {
+            String selectStr = br.readLine();
+            return Integer.parseInt(selectStr);
+        } catch (IOException e) {
+            return -1;
+        }
+    }
+
+    void startMessagePrint(){
+        System.out.println(START_MESSAGE);
     }
 
     int[] getPlayerNumBox () {

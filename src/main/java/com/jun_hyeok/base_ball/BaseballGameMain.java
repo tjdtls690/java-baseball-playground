@@ -1,5 +1,7 @@
 package com.jun_hyeok.base_ball;
 
+import java.util.Arrays;
+
 public class BaseballGameMain {
 
     private final BaseballGameCom bc;
@@ -14,15 +16,16 @@ public class BaseballGameMain {
         boolean checkAnswer = false;
         while(!checkAnswer) {
             int[] playerNumBox = iv.getPlayerNumBox();
-
-            // InputView, OutputView
-            // 입력 클래스, 출력 클래스를 따로 만든다.
+            checkAnswer = BaseBallGameUtility.compare(playerNumBox, comNumBox);
         }
-        return false;
+        System.out.println("comNum : " + Arrays.toString(comNumBox));
+        ResultView.successPrint();
+
+        return iv.restartMessageAndSelect();
     }
 
     private void execute() {
-        InputView.startMessagePrint();
+        iv.startMessagePrint();
         boolean play = true;
         while(play){
             int[] comNumBox = bc.getRanNumBox();
