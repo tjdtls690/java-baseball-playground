@@ -1,21 +1,23 @@
 package com.jun_hyeok.base_ball;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.Arrays;
-
 public class BaseballGameMain {
 
-    private BaseballGameCom bc;
-    private BaseballGamePlayer bp;
+    private final BaseballGameCom bc;
+    private final InputView iv;
 
     public BaseballGameMain() {
         bc = new BaseballGameCom();
-        bp = new BaseballGamePlayer();
+        iv = new InputView();
     }
 
     private boolean runBaseballGame(int[] comNumBox) {
+        boolean checkAnswer = false;
+        while(!checkAnswer) {
+            int[] playerNumBox = iv.getPlayerNumBox();
 
+            // InputView, OutputView
+            // 입력 클래스, 출력 클래스를 따로 만든다.
+        }
         return false;
     }
 
