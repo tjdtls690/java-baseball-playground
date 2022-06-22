@@ -10,9 +10,9 @@
   
 ## 도메인
 - [ ] 컴퓨터 숫자와 플레이어 숫자를 비교해서 결과값을 도출한다.  Referee#compare()
-  - [ ] 낫싱 : 같은 숫자가 아예 없는 경우  AssistantReferee#isNothing()
-  - [ ] 스트라이크 : 같은 숫자, 같은 위치  AssistantReferee#isStrike()
-  - [ ] 볼 : 같은 숫자, 다른 위치  AssistantReferee#isBall()
+  - [ ] 낫싱 : 같은 숫자가 아예 없는 경우  Ball#play()
+  - [ ] 스트라이크 : 같은 숫자, 같은 위치  Ball#play()
+  - [ ] 볼 : 같은 숫자, 다른 위치  Ball#play()
 - [ ] 결과값을 통해 정답 여부를 판단한다.  Referee#isCorrect()
   - [ ] 정답 : 3 strike  
   - [ ] 오답 : not 3 strike
