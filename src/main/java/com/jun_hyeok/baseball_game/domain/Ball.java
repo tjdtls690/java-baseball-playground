@@ -3,11 +3,11 @@ package com.jun_hyeok.baseball_game.domain;
 import java.util.Objects;
 
 public class Ball {
-    private final int position;
-    private final BallNumber number;
+    private final BallPosition position;
+    private BallNumber number;
 
     public Ball(int position, int number) {
-        this.position = position;
+        this.position = new BallPosition(position);
         this.number = new BallNumber(number);
     }
 
@@ -24,7 +24,7 @@ public class Ball {
     }
 
     private boolean matchBall(Ball playerBall) {
-        return this.number == playerBall.number;
+        return number.equals(playerBall.number);
     }
 
     @Override
@@ -32,11 +32,11 @@ public class Ball {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Ball ball = (Ball) o;
-        return number == ball.number && position == ball.position;
+        return position.equals(ball.position) && number.equals(ball.number);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(number, position);
+        return Objects.hash(position, number);
     }
 }

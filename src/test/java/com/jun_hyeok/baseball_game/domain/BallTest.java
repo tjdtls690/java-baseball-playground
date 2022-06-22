@@ -4,6 +4,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class BallTest {
     private Ball com;
@@ -29,5 +31,16 @@ public class BallTest {
     void isNothing(){
         BallStatus status = com.play(new Ball(1, 5));
         assertThat(status).isEqualTo(BallStatus.NOTHING);
+    }
+
+    @Test
+    void isIllegalArgumentException(){
+        assertThatExceptionOfType(IllegalArgumentException.class).isThrownBy(() -> {
+            new Ball(1, 10);
+        }).withMessage("숫자는 1 ~ 9 까지만 가능합니다.");
+
+        assertThatExceptionOfType(IllegalArgumentException.class).isThrownBy(() -> {
+            new Ball(3, 9);
+        }).withMessage("볼의 갯수는 3개까지만 가능합니다.");
     }
 }
