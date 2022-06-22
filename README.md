@@ -4,7 +4,7 @@
 - [ ] 컴퓨터에게 3개의 랜덤 숫자를 입력받는다.  Computer#createRandomNumber()
   - [x] 3개의 숫자가 모두 달라야 한다.  Judgment#isDifferent()
   - [x] 1 ~ 9 까지의 숫자만 들어와야 한다.  Judgment#isInRange()
-- [ ] 사용자에게 3개의 숫자를 입력받는다.  Player#inputNumber()
+- [ ] 사용자에게 3개의 숫자를 입력받는다.  InputView#inputNumber()
   - [x] 3개의 숫자가 모두 달라야 한다.  Judgment#isDifferent()
   - [x] 1 ~ 9 까지의 숫자만 들어와야 한다.  Judgment#isInRange()
   
