@@ -1,2 +1,5 @@
-package com.jun_hyeok.baseball_game.domain;public enum BallStatus {
+package com.jun_hyeok.baseball_game.domain;
+
+public enum BallStatus {
+    BALL, STRIKE, NOTHING
 }
