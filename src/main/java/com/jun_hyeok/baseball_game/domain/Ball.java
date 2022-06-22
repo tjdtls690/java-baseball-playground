@@ -3,12 +3,12 @@ package com.jun_hyeok.baseball_game.domain;
 import java.util.Objects;
 
 public class Ball {
-    private final int number;
     private final int position;
+    private final BallNumber number;
 
     public Ball(int position, int number) {
         this.position = position;
-        this.number = number;
+        this.number = new BallNumber(number);
     }
 
     public BallStatus play(Ball playerBall) {

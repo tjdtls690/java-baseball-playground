@@ -17,12 +17,4 @@ public class JudgmentTest {
         Judgment judgment = new Judgment();
         assertEquals(judgment.isDifferent(Arrays.asList(1, 2, 3), num), assertBool);
     }
-
-    @ParameterizedTest
-    @DisplayName("숫자가 1 ~ 9 안에 속하는지 검증")
-    @CsvSource({"1, true", "9, true", "10, false", "0, false"})
-    void isInRange(int num, boolean assertBool){
-        Judgment judgment = new Judgment();
-        assertEquals(judgment.isInRange(num), assertBool);
-    }
 }
