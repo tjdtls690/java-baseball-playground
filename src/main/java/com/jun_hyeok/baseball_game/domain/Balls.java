@@ -18,15 +18,23 @@ public class Balls {
         return resultList;
     }
 
-    public BallStatus isMatchUp(Ball playerBall) {
-        return this.checkNum(playerBall);
-    }
-
-    private BallStatus checkNum(Ball playerBall) {
+    public BallStatus play(Ball playerBall) {
         return comNumberBox.stream()
                 .map(answer -> answer.play(playerBall))
                 .filter(BallStatus::isNotNothing)
                 .findFirst()
                 .orElse(BallStatus.NOTHING);
+    }
+
+
+    public Referee play(List<Integer> userNumberBox) {
+        List<Ball> userBall = mapBall(userNumberBox);
+        Referee result = new Referee();
+        for (Ball ball : userBall) {
+            BallStatus status = this.play(ball);
+            result.report(status);
+        }
+
+        return result;
     }
 }
