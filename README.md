@@ -3,10 +3,10 @@
 ## 입력
 - [ ] 컴퓨터에게 3개의 랜덤 숫자를 입력받는다.  Computer#createRandomNumber()
   - [x] 3개의 숫자가 모두 달라야 한다.  Judgment#isDifferent()
-  - [x] 1 ~ 9 까지의 숫자만 들어와야 한다.  Judgment#isInRange()
+  - [x] 1 ~ 9 까지의 숫자만 들어와야 한다.  BallNumber#new Ball()
 - [ ] 사용자에게 3개의 숫자를 입력받는다.  InputView#inputNumber()
   - [x] 3개의 숫자가 모두 달라야 한다.  Judgment#isDifferent()
-  - [x] 1 ~ 9 까지의 숫자만 들어와야 한다.  Judgment#isInRange()
+  - [x] 1 ~ 9 까지의 숫자만 들어와야 한다.  BallNumber#new Ball()
   
 ## 도메인
 - [x] 숫자를 하나 vs 하나로 비교해서 답 반환하기
