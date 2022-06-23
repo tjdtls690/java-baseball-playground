@@ -18,27 +18,6 @@ public class BallsTest {
     }
 
     @Test
-    @DisplayName("Strike 가 잘 반환되는지 검증")
-    void isStrike(){
-        BallStatus status = com.play(new Ball(2, 3));
-        assertThat(status).isEqualTo(BallStatus.STRIKE);
-    }
-
-    @Test
-    @DisplayName("Ball 이 잘 반환되는지 검증")
-    void isBall(){
-        BallStatus status = com.play(new Ball(1, 3));
-        assertThat(status).isEqualTo(BallStatus.BALL);
-    }
-
-    @Test
-    @DisplayName("Nothing 이 잘 반환되는지 검증")
-    void isNothing(){
-        BallStatus status = com.play(new Ball(1, 9));
-        assertThat(status).isEqualTo(BallStatus.NOTHING);
-    }
-
-    @Test
     @DisplayName("1 strike 1 ball")
     void strike1ball1(){
         Referee referee = com.play(Arrays.asList(2, 4, 3));
@@ -53,6 +32,13 @@ public class BallsTest {
         assertThat(referee.getStrike()).isEqualTo(3);
         assertThat(referee.getBall()).isEqualTo(0);
         assertThat(referee.isGameEnd()).isTrue();
+    }
+
+    @Test
+    @DisplayName("1 ~ 9 범위를 벗어날 경우 null 반환 검증")
+    void getNull(){
+        Referee referee = com.play(Arrays.asList(1, 2, 10));
+        assertThat(referee).isEqualTo(null);
     }
 
     @Test

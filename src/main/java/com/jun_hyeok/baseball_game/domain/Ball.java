@@ -6,7 +6,7 @@ public class Ball {
     private final BallPosition position;
     private final BallNumber number;
 
-    public Ball(int position, int number) {
+    public Ball(int position, int number) throws IllegalArgumentException{
         this.position = new BallPosition(position);
         this.number = new BallNumber(number);
     }

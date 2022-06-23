@@ -12,15 +12,26 @@ public class Balls {
         this.comNumberBox = mapBall(comNumberBox);
     }
 
-    private List<Ball> mapBall(List<Integer> comNumberBox) {
+    private List<Ball> mapBall(List<Integer> numberBox) {
         List<Ball> resultList = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
-            resultList.add(new Ball(i, comNumberBox.get(i)));
+            addBall(resultList, numberBox.get(i), i);
         }
+
         return resultList;
     }
 
-    public BallStatus play(Ball playerBall) {
+    private void addBall(List<Ball> resultList, int num, int idx) {
+        Ball ball = null;
+        try {
+            ball = new Ball(idx, num);
+        } catch (IllegalArgumentException ie) {
+            System.out.println(ie.getMessage());
+        }
+        resultList.add(ball);
+    }
+
+    private BallStatus play(Ball playerBall) {
         return comNumberBox.stream()
                 .map(answer -> answer.play(playerBall))
                 .filter(BallStatus::isNotNothing)
@@ -31,12 +42,19 @@ public class Balls {
 
     public Referee play(List<Integer> userNumberBox) {
         List<Ball> userBall = mapBall(userNumberBox);
+        if (userBall.contains(null)) {
+            return null;
+        }
+
+        return getResult(userBall);
+    }
+
+    private Referee getResult(List<Ball> userBall) {
         Referee result = new Referee();
         for (Ball ball : userBall) {
             BallStatus status = this.play(ball);
             result.report(status);
         }
-
         return result;
     }
 }
