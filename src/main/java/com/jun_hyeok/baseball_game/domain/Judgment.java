@@ -5,6 +5,6 @@ import java.util.List;
 public class Judgment {
 
     public boolean isDifferent(List<Integer> currentList, int num) {
-        return !currentList.contains(num);
+        return currentList.contains(num);
     }
 }

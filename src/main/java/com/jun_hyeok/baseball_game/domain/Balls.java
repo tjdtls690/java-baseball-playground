@@ -1,5 +1,7 @@
 package com.jun_hyeok.baseball_game.domain;
 
+import com.jun_hyeok.baseball_game.input.Computer;
+
 import java.util.ArrayList;
 import java.util.List;
 
