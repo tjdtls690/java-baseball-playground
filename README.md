@@ -13,8 +13,8 @@
     - [x] 전부 서로 다른 수임을 검증
 
 ## 출력
-- [ ] 반환받은 결과값을 출력  ResultView#resultPrint()
-- [ ] 다시 시작 여부 묻기  ResultView#restartAskPrint()
+- [x] 반환받은 결과값을 출력  ResultView#resultPrint()
+- [ ] 다시 시작 선택값 반환  ResultView#restartAsk()
     
 ## 도메인
 - [x] 하나 vs 하나로 숫자 비교 후 결과 반환  Ball#play()
