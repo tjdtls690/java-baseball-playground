@@ -22,11 +22,11 @@ public class ResultView {
 
     private int getCorrectSelectNum() {
         int num = 0;
-        try{
+        try {
             num = getSelectNum();
             isCorrectSelectNum(num);
             return num;
-        }catch (IllegalArgumentException e) {
+        } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
             return getCorrectSelectNum();
         }

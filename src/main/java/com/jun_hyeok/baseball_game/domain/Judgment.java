@@ -5,11 +5,11 @@ public class Judgment {
     private int ball;
 
     public void report(BallStatus status) {
-        if(status == BallStatus.STRIKE){
+        if (status == BallStatus.STRIKE) {
             strike++;
         }
 
-        if(status == BallStatus.BALL){
+        if (status == BallStatus.BALL) {
             ball++;
         }
     }

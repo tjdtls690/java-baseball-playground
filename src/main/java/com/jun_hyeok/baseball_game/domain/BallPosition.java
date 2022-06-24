@@ -7,7 +7,7 @@ public class BallPosition {
     private final int position;
 
     public BallPosition(int position) {
-        if(position < 0 || position > 2){
+        if (position < 0 || position > 2) {
             throw new IllegalArgumentException(ERROR_MESSAGE);
         }
         this.position = position;

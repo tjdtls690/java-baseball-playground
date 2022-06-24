@@ -19,7 +19,7 @@ public class ComputerTest {
 
     @RepeatedTest(10)
     @DisplayName("서로 다른 3개의 숫자임을 검증")
-    void getRanNum(){
+    void getRanNum() {
         List<Integer> comNumBox = com.getRanNum();
         assertThat(comNumBox.get(0)).isNotEqualTo(comNumBox.get(1));
         assertThat(comNumBox.get(1)).isNotEqualTo(comNumBox.get(2));

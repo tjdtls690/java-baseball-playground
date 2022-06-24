@@ -17,7 +17,7 @@ public class Balls {
         this.comBallBox = comBallBox;
     }
 
-    public Judgment play(List<Ball> playerBallBox){
+    public Judgment play(List<Ball> playerBallBox) {
         Judgment resultAssistant = new Judgment();
         for (int i = 0; i < 3; i++) {
             BallStatus status = this.play(playerBallBox.get(i));
@@ -27,11 +27,11 @@ public class Balls {
     }
 
     public BallStatus play(Ball playerBall) {
-        if(this.isMatch(playerBall).isStrike()){
+        if (this.isMatch(playerBall).isStrike()) {
             return BallStatus.STRIKE;
         }
 
-        if(this.isMatch(playerBall).isBall()){
+        if (this.isMatch(playerBall).isBall()) {
             return BallStatus.BALL;
         }
 

@@ -17,21 +17,21 @@ public class BallTest {
 
     @Test
     @DisplayName("Strike 검증")
-    void strike(){
+    void strike() {
         BallStatus status = comBall.play(new Ball(1, 4));
         assertThat(status).isEqualTo(BallStatus.STRIKE);
     }
 
     @Test
     @DisplayName("Ball 검증")
-    void ball(){
+    void ball() {
         BallStatus status = comBall.play(new Ball(0, 4));
         assertThat(status).isEqualTo(BallStatus.BALL);
     }
 
     @Test
     @DisplayName("Nothing 검증")
-    void nothing(){
+    void nothing() {
         BallStatus status = comBall.play(new Ball(0, 5));
         assertThat(status).isEqualTo(BallStatus.NOTHING);
     }

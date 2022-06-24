@@ -23,7 +23,7 @@ public class InputView {
     public List<Ball> getPlayerBallBox() {
         List<Ball> playerBallBox = new ArrayList<>();
         boolean checkCorrectNum = false;
-        while(!checkCorrectNum){
+        while (!checkCorrectNum) {
             playerBallBox.clear();
             checkCorrectNum = isCorrectInputNum(playerBallBox);
         }
@@ -36,24 +36,24 @@ public class InputView {
             List<Integer> playerNumBox = checkDiffAndGetNumBox(num);
             inputPlayerBallBox(playerBallBox, playerNumBox);
             return true;
-        }catch (IllegalArgumentException e){
+        } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
             return false;
         }
     }
 
-    private List<Integer> checkDiffAndGetNumBox(int num) throws IllegalArgumentException{
+    private List<Integer> checkDiffAndGetNumBox(int num) throws IllegalArgumentException {
         int num1 = num / 100;
         int num2 = num % 100 / 10;
         int num3 = num % 10;
-        if(num1 == num2 || num2 == num3 || num1 == num3){
+        if (num1 == num2 || num2 == num3 || num1 == num3) {
             throw new IllegalArgumentException(ERROR_MESSAGE);
         }
         return Arrays.asList(num / 100, num % 100 / 10, num % 10);
     }
 
 
-    private int getInputNum() throws IllegalArgumentException{
+    private int getInputNum() throws IllegalArgumentException {
         System.out.print(INPUT_MESSAGE);
         int num;
         try {
@@ -65,7 +65,7 @@ public class InputView {
         return num;
     }
 
-    private void inputPlayerBallBox(List<Ball> playerBallBox, List<Integer> playerNumBox) throws IllegalArgumentException{
+    private void inputPlayerBallBox(List<Ball> playerBallBox, List<Integer> playerNumBox) throws IllegalArgumentException {
         for (int i = MIN_POSITION; i < MAX_POSITION; i++) {
             playerBallBox.add(new Ball(i, playerNumBox.get(i)));
         }
