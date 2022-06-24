@@ -1,7 +1,7 @@
 # 기능 구현 목록
 
 ## 게임 플레이
-- [ ] 각 객체들을 이용해서 게임을 플레이한다. Application#playGame()
+- [x] 각 객체들을 이용해서 게임을 플레이한다. Application#playGame()
 
 ## 입력
 - [x] 컴퓨터에게 1 ~ 9 까지의 3자리 랜덤 숫자를 입력받는다.  Computer#getRanNum()
