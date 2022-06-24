@@ -26,11 +26,12 @@
   - [x] nothing : 0 ball 0 strike
   - [x] ball : 같은 숫자, 다른 위치
   - [x] strike : 같은 숫자, 같은 위치
-- [x] 리스트 vs 리스트로 숫자 비교 후 결과 반환  Referee#result()
+- [x] 리스트 vs 리스트로 숫자 비교 후 결과 반환  Balls#play()
   - [x] nothing : 0 ball 0 strike
   - [x] ball : 같은 숫자, 다른 위치
   - [x] strike : 같은 숫자, 같은 위치
 - [x] 결과값을 저장  Judgment
+  - [x] 정답 여부 판단  Judgment#isGameEnd()
 
 
 기본적으로 1부터 9까지 서로 다른 수로 이루어진 3자리의 수를 맞추는 게임이다.

@@ -30,6 +30,7 @@ public class BallsTest {
         Judgment judgment = comBalls.play(Arrays.asList(new Ball(0, 1), new Ball(1, 2), new Ball(2, 3)));
         assertThat(judgment.getStrike()).isEqualTo(3);
         assertThat(judgment.getBall()).isEqualTo(0);
+        assertThat(judgment.isGameEnd()).isTrue();
     }
 
     @Test

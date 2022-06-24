@@ -21,4 +21,9 @@ public class Judgment {
     public int getBall() {
         return ball;
     }
+
+
+    public boolean isGameEnd() {
+        return strike == 3;
+    }
 }
