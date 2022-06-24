@@ -14,7 +14,8 @@
 
 ## 출력
 - [x] 반환받은 결과값을 출력  ResultView#resultPrint()
-- [ ] 다시 시작 선택값 반환  ResultView#restartAsk()
+- [ ] 정답일 시, 축하 메시지와 재시작 선택 여부 출력  ResultView#restartAsk()
+- [ ] 다시 시작 선택값 반환  ResultView#restartSelectNum()
     
 ## 도메인
 - [x] 하나 vs 하나로 숫자 비교 후 결과 반환  Ball#play()
