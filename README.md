@@ -2,11 +2,12 @@
 
 ## 입력
 - [ ] 컴퓨터에게 1 ~ 9 까지의 3자리 랜덤 숫자를 입력받는다.  Computer#getRanNum()
-  - [ ] 1 ~ 9 까지의 숫자임을 검증 
-  - [ ] 전부 서로 다른 수임을 검증
+  - [x] 1 ~ 9 까지의 '숫자'임을 검증  Math.random()
+  - [ ] 전부 서로 다른 수임을 검증  
 - [ ] 사용자에게 1 ~ 9 까지의 3자리 랜덤 숫자를 입력받는다.  InputView#inputNum()
-  - [ ] 1 ~ 9 까지의 숫자임을 검증
-  - [ ] 전부 서로 다른 수임을 검증
+  - [ ] 이 중 하나라도 만족 못한다면, 다시 입력 받기
+    - [x] 1 ~ 9 까지의 '숫자'임을 검증  BallNumber#생성자
+    - [ ] 전부 서로 다른 수임을 검증
 
 ## 출력
 - [ ] 반환받은 결과값을 출력  ResultView#resultPrint()
@@ -17,17 +18,15 @@
   - [x] nothing : 0 ball 0 strike  (enum)BallStatus#NOTHING
   - [x] ball : 같은 숫자, 다른 위치  (enum)BallStatus#BALL
   - [x] strike : 같은 숫자, 같은 위치  (enum)BallStatus#STRIKE
-- [ ] 리스트 vs 하나로 숫자 비교 후 결과 반환  Balls#play()
-  - [ ] nothing : 0 ball 0 strike
-  - [ ] ball : 같은 숫자, 다른 위치
-  - [ ] strike : 같은 숫자, 같은 위치
-- [ ] 리스트 vs 리스트로 숫자 비교 후 결과 반환  Referee#result()
-  - [ ] nothing : 0 ball 0 strike
-  - [ ] ball : 같은 숫자, 다른 위치
-  - [ ] strike : 같은 숫자, 같은 위치
-- [ ] 각 단계의 결과값들을 저장  Judgment
-  - [ ] +1 strike : isStrike()
-  - [ ] +1 ball : isBall()
+- [x] 리스트 vs 하나로 숫자 비교 후 결과 반환  Balls#play()
+  - [x] nothing : 0 ball 0 strike
+  - [x] ball : 같은 숫자, 다른 위치
+  - [x] strike : 같은 숫자, 같은 위치
+- [x] 리스트 vs 리스트로 숫자 비교 후 결과 반환  Referee#result()
+  - [x] nothing : 0 ball 0 strike
+  - [x] ball : 같은 숫자, 다른 위치
+  - [x] strike : 같은 숫자, 같은 위치
+- [x] 결과값을 저장  Judgment
 
 
 기본적으로 1부터 9까지 서로 다른 수로 이루어진 3자리의 수를 맞추는 게임이다.
