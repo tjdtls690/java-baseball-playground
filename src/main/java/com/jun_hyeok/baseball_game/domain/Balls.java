@@ -17,8 +17,7 @@ public class Balls {
         this.comBallBox = comBallBox;
     }
 
-    public Judgment play(List<Integer> playerNumBox){
-        List<Ball> playerBallBox = getPlayerBallBox(playerNumBox);
+    public Judgment play(List<Ball> playerBallBox){
         Judgment resultAssistant = new Judgment();
         for (int i = 0; i < 3; i++) {
             BallStatus status = this.play(playerBallBox.get(i));

@@ -19,7 +19,7 @@ public class BallsTest {
     @Test
     @DisplayName("0 ball 0 strike")
     void ball_0_strike_0(){
-        Judgment judgment = comBalls.play(Arrays.asList(4, 5, 6));
+        Judgment judgment = comBalls.play(Arrays.asList(new Ball(0, 4), new Ball(1, 5), new Ball(2, 6)));
         assertThat(judgment.getStrike()).isEqualTo(0);
         assertThat(judgment.getBall()).isEqualTo(0);
     }
@@ -27,7 +27,7 @@ public class BallsTest {
     @Test
     @DisplayName("0 Ball 3 Strike")
     void ball_0_strike_3(){
-        Judgment judgment = comBalls.play(Arrays.asList(1, 2, 3));
+        Judgment judgment = comBalls.play(Arrays.asList(new Ball(0, 1), new Ball(1, 2), new Ball(2, 3)));
         assertThat(judgment.getStrike()).isEqualTo(3);
         assertThat(judgment.getBall()).isEqualTo(0);
     }
@@ -35,7 +35,7 @@ public class BallsTest {
     @Test
     @DisplayName("3 Ball 0 Strike")
     void ball_3_strike_0(){
-        Judgment judgment = comBalls.play(Arrays.asList(3, 1, 2));
+        Judgment judgment = comBalls.play(Arrays.asList(new Ball(0, 3), new Ball(1, 1), new Ball(2, 1)));
         assertThat(judgment.getStrike()).isEqualTo(0);
         assertThat(judgment.getBall()).isEqualTo(3);
     }
@@ -43,7 +43,7 @@ public class BallsTest {
     @Test
     @DisplayName("1 Ball 1 Strike")
     void ball_1_strike_1(){
-        Judgment judgment = comBalls.play(Arrays.asList(1, 3, 4));
+        Judgment judgment = comBalls.play(Arrays.asList(new Ball(0, 1), new Ball(1, 3), new Ball(2, 4)));
         assertThat(judgment.getStrike()).isEqualTo(1);
         assertThat(judgment.getBall()).isEqualTo(1);
     }
