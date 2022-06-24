@@ -11,7 +11,7 @@ import java.util.List;
 
 public class InputView {
     public static final String ERROR_MESSAGE = "서로 다른 1 ~ 9 까지의 3개 '숫자'만 입력 가능합니다.";
-    public static final String INPUT_MESSAGE = "숫자를 입력해 주세요.";
+    public static final String INPUT_MESSAGE = "숫자를 입력해 주세요 : ";
     private static final int MIN_POSITION = 0;
     private static final int MAX_POSITION = 3;
     private final BufferedReader br;
@@ -54,7 +54,7 @@ public class InputView {
 
 
     private int getInputNum() throws IllegalArgumentException{
-        System.out.println(INPUT_MESSAGE);
+        System.out.print(INPUT_MESSAGE);
         int num;
         try {
             String numStr = br.readLine();
