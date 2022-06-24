@@ -14,7 +14,7 @@
 
 ## 출력
 - [x] 반환받은 결과값을 출력  ResultView#resultPrint()
-- [ ] 정답일 시, 축하 메시지와 재시작 선택 여부 출력  ResultView#restartAsk()
+- [x] 정답일 시, 축하 메시지와 재시작 선택 여부 출력  ResultView#restartAsk()
 - [ ] 다시 시작 선택값 반환  ResultView#restartSelectNum()
     
 ## 도메인
