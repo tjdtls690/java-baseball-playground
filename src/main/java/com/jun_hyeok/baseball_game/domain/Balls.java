@@ -29,7 +29,7 @@ public class Balls {
 
     private List<Ball> getPlayerBallBox(List<Integer> playerNumBox) {
         List<Ball> playerBallBox = new ArrayList<>();
-        for (int i = 0; i < 3; i++) {
+        for (int i = MIN_POSITION; i < MAX_POSITION; i++) {
             playerBallBox.add(new Ball(i, playerNumBox.get(i)));
         }
         return playerBallBox;
