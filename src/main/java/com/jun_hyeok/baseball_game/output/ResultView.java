@@ -9,6 +9,7 @@ import java.io.InputStreamReader;
 
 public class ResultView {
     public static final String ERROR_MESSAGE = "숫자 1과 2 중 하나를 선택해주세요.";
+    public static final String RESTART_SELECT_ASK_MESSAGE = "3개의 숫자를 모두 맞히셨습니다! 게임 종료\n게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.";
     private final BufferedReader br;
 
     public ResultView() {
@@ -50,7 +51,7 @@ public class ResultView {
     }
 
     public void restartAsk() {
-        System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료\n게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
+        System.out.println(RESTART_SELECT_ASK_MESSAGE);
     }
 
     public void resultPrint(Judgment result) {
