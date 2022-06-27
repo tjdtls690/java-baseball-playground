@@ -9,13 +9,13 @@ public class Balls {
     private final List<Ball> comBallBox;
 
     public Balls(List<Integer> comNumBox) {
-        this.comBallBox = mapBall(comNumBox);
+        this.comBallBox = mappingBall(comNumBox);
     }
 
-    private List<Ball> mapBall(List<Integer> comNumBox) {
+    private List<Ball> mappingBall(List<Integer> numBox) {
         List<Ball> mappingBallBox = new ArrayList<>();
         for (int i = MIN_POSITION; i < MAX_POSITION; i++) {
-            mappingBallBox.add(new Ball(i, comNumBox.get(i)));
+            mappingBallBox.add(new Ball(i, numBox.get(i)));
         }
         return mappingBallBox;
     }
