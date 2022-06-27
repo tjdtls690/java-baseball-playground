@@ -19,14 +19,10 @@ public class InputView {
     public static final String ERROR_MESSAGE_SELECT_RESTART_NUM_IN_RANGE = "1 ~ 2 까지의 숫자만 입력 가능합니다.";
     public static final String CONGRATULATION_AND_GAME_END_MESSAGE = "3개의 숫자를 모두 맞히셨습니다! 게임 종료";
     public static final String ASK_RESTART_MESSAGE = "게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.";
-    private final BufferedReader br;
-
-    public InputView() {
-        br = new BufferedReader(new InputStreamReader(System.in));
-    }
+    private static final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
     // selectRestartNum 반환
-    public int getSelectRestartNum(){
+    public static int getSelectRestartNum(){
         try{
             System.out.println(ASK_RESTART_MESSAGE);
             return getCorrectInputNum();
@@ -37,7 +33,7 @@ public class InputView {
     }
 
     // '숫자'임을 검증 및 반환
-    private int getCorrectInputNum() throws IllegalArgumentException{
+    private static int getCorrectInputNum() throws IllegalArgumentException{
         try{
             String numStr = br.readLine();
             int selectRestartNum = Integer.parseInt(numStr);
@@ -49,7 +45,7 @@ public class InputView {
     }
 
     // selectRestartNum 숫자가 1 ~ 2 까지의 숫자인지 검증
-    private void isCorrectNum(int selectRestartNum) throws IllegalArgumentException{
+    private static void isCorrectNum(int selectRestartNum) throws IllegalArgumentException{
         if(selectRestartNum > 2 || selectRestartNum < 1){
             throw new IllegalArgumentException(ERROR_MESSAGE_SELECT_RESTART_NUM_IN_RANGE);
         }
@@ -58,7 +54,7 @@ public class InputView {
 
     // List<Ball> 타입인 플레이어 볼 리스트를 반환
     // 3개의 수가 서로 다른 수인지, 그리고 각 숫자가 1 ~ 9 까지의 숫자인지 검증
-    public List<Ball> getPlayerBallBox(){
+    public static List<Ball> getPlayerBallBox(){
         try{
             return convertToPlayerBallBox();
         }catch (IllegalArgumentException e){
@@ -68,7 +64,7 @@ public class InputView {
     }
 
     // List<Integer> 를 List<Ball> 로 변환 후, 반환
-    private List<Ball> convertToPlayerBallBox() throws IllegalArgumentException{
+    private static List<Ball> convertToPlayerBallBox() throws IllegalArgumentException{
         List<Ball> playerBallBox = new ArrayList<>();
         List<Integer> playerNumBox = getPlayerNumBox();
         for (int i = BallPosition.MIN_POSITION; i <= BallPosition.MAX_POSITION; i++) {
@@ -78,7 +74,7 @@ public class InputView {
     }
 
     // List<Integer> 타입인 플레이어 숫자리스트를 반환
-    private List<Integer> getPlayerNumBox() throws IllegalArgumentException{
+    private static List<Integer> getPlayerNumBox() throws IllegalArgumentException{
         int playerNum = getPlayerNum();
         return getCorrectPlayerNumBox(playerNum);
     }
@@ -86,7 +82,7 @@ public class InputView {
 
     // 플레이어의 숫자를 입력
     // 숫자 타입인지 검증
-    private int getPlayerNum() throws IllegalArgumentException{
+    private static int getPlayerNum() throws IllegalArgumentException{
         try{
             System.out.print(INPUT_START_MESSAGE);
             String numStr = br.readLine();
@@ -97,7 +93,7 @@ public class InputView {
     }
 
     // 3개의 수가 서로 다른 수임을 검증 후, List<Integer> 타입인 플레이어 숫자리스트 반환
-    private List<Integer> getCorrectPlayerNumBox(int playerNum) throws IllegalArgumentException{
+    private static List<Integer> getCorrectPlayerNumBox(int playerNum) throws IllegalArgumentException{
         List<Integer> playerNumBox = InputPlayerNum(playerNum);
         if(Objects.equals(playerNumBox.get(0), playerNumBox.get(1)) || Objects.equals(playerNumBox.get(0), playerNumBox.get(2)) ||
                 Objects.equals(playerNumBox.get(1), playerNumBox.get(2))){
@@ -106,7 +102,7 @@ public class InputView {
         return playerNumBox;
     }
 
-    private List<Integer> InputPlayerNum(int playerNum) {
+    private static List<Integer> InputPlayerNum(int playerNum) {
         return Arrays.asList(playerNum / 100, playerNum % 100 / 10, playerNum % 10);
     }
 }

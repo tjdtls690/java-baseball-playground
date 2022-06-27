@@ -7,17 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Computer {
-    public List<Ball> getComBallBox() {
-        List<Ball> comBallBox = new ArrayList<>();
-        List<Integer> comNumBox = getComNumBox();
-        for (int i = BallPosition.MIN_POSITION; i <= BallPosition.MAX_POSITION; i++) {
-            int comNum = comNumBox.get(i);
-            comBallBox.add(new Ball(i, comNum));
-        }
-        return comBallBox;
-    }
 
-    List<Integer> getComNumBox() {
+    public List<Integer> getComNumBox() {
         List<Integer> comNumBox = new ArrayList<>();
         for (int i = BallPosition.MIN_POSITION; i <= BallPosition.MAX_POSITION; i++) {
             int comNum = getDiffNum(comNumBox);
