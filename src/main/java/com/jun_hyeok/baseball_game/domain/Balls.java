@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Balls {
-    public static final int MIN_POSITION = 0;
-    public static final int MAX_POSITION = 3;
     private final List<Ball> comBallBox;
 
     public Balls(List<Integer> comNumBox) {
@@ -14,7 +12,7 @@ public class Balls {
 
     private List<Ball> mappingBall(List<Integer> numBox) {
         List<Ball> mappingBallBox = new ArrayList<>();
-        for (int i = MIN_POSITION; i < MAX_POSITION; i++) {
+        for (int i = BallPosition.MIN_POSITION; i <= BallPosition.MAX_POSITION; i++) {
             mappingBallBox.add(new Ball(i, numBox.get(i)));
         }
         return mappingBallBox;
