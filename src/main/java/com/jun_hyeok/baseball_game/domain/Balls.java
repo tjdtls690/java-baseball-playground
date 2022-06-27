@@ -25,4 +25,12 @@ public class Balls {
                 .findFirst()
                 .orElse(BallStatus.NOTHING);
     }
+
+    public Referee play(List<Ball> playerBallBox){
+        Referee referee = new Referee();
+        for (Ball playerBall : playerBallBox) {
+            referee.ballMatch(this.play(playerBall));
+        }
+        return referee;
+    }
 }
