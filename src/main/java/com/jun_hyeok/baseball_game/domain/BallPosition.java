@@ -9,7 +9,7 @@ public class BallPosition {
     private final int position;
 
     public BallPosition(int position) {
-        if(position < MIN_POSITION || position > MAX_POSITION){
+        if (position < MIN_POSITION || position > MAX_POSITION) {
             throw new IllegalArgumentException(ERROR_MESSAGE);
         }
         this.position = position;

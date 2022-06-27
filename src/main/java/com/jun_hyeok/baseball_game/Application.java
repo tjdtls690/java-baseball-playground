@@ -11,9 +11,9 @@ import javax.xml.transform.Result;
 import java.util.List;
 
 public class Application {
-    public void playGame(){
+    public void playGame() {
         boolean checkRestart = true;
-        while(checkRestart){
+        while (checkRestart) {
             playBallMatch();
             checkRestart = isRestart();
         }
@@ -22,7 +22,7 @@ public class Application {
     private void playBallMatch() {
         boolean isGameEnd = false;
         Balls comBalls = getComBalls();
-        while(!isGameEnd){
+        while (!isGameEnd) {
             Referee result = getResult(comBalls);
             resultPrint(result);
             isGameEnd = result.isGameEnd();

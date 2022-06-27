@@ -13,11 +13,11 @@ public class Referee {
     }
 
     public void ballMatch(BallStatus result) {
-        if(result.isStrike()){
+        if (result.isStrike()) {
             strike++;
         }
 
-        if(result.isBall()){
+        if (result.isBall()) {
             ball++;
         }
     }

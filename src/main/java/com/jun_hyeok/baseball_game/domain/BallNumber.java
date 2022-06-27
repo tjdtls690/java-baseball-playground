@@ -6,7 +6,7 @@ public class BallNumber {
     private final int number;
 
     public BallNumber(int number) {
-        if(number > 9 || number < 1){
+        if (number > 9 || number < 1) {
             throw new IllegalArgumentException("숫자는 1 ~ 9 까지만 가능합니다.");
         }
         this.number = number;

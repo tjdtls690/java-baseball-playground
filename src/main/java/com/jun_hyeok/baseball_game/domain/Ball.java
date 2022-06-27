@@ -12,11 +12,11 @@ public class Ball {
     }
 
     public BallStatus play(Ball ball) {
-        if(this.equals(ball)){
+        if (this.equals(ball)) {
             return BallStatus.STRIKE;
         }
 
-        if(number.equals(ball.number)){
+        if (number.equals(ball.number)) {
             return BallStatus.BALL;
         }
 

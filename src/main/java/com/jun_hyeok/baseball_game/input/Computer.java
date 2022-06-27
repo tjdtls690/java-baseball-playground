@@ -20,7 +20,7 @@ public class Computer {
     private int getDiffNum(List<Integer> comNumBox) {
         boolean checkDiffNum = false;
         int comNum = 0;
-        while(!checkDiffNum){
+        while (!checkDiffNum) {
             comNum = (int) (Math.random() * 9) + 1;
             checkDiffNum = isDiffNum(comNumBox, comNum);
         }

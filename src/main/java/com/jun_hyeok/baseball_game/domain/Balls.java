@@ -26,7 +26,7 @@ public class Balls {
                 .orElse(BallStatus.NOTHING);
     }
 
-    public Referee play(List<Ball> playerBallBox){
+    public Referee play(List<Ball> playerBallBox) {
         Referee referee = new Referee();
         for (Ball playerBall : playerBallBox) {
             referee.ballMatch(this.play(playerBall));
