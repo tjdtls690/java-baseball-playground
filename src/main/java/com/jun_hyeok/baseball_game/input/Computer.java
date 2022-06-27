@@ -1,19 +1,16 @@
 package com.jun_hyeok.baseball_game.input;
 
 import com.jun_hyeok.baseball_game.domain.Ball;
+import com.jun_hyeok.baseball_game.domain.BallPosition;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Computer {
-
-    public static final int MAX_POSITION = 3;
-    public static final int MIN_POSITION = 0;
-
     public List<Ball> getComBallBox() {
         List<Ball> comBallBox = new ArrayList<>();
         List<Integer> comNumBox = getComNumBox();
-        for (int i = MIN_POSITION; i < MAX_POSITION; i++) {
+        for (int i = BallPosition.MIN_POSITION; i < BallPosition.MAX_POSITION; i++) {
             int comNum = comNumBox.get(i);
             comBallBox.add(new Ball(i, comNum));
         }
@@ -22,7 +19,7 @@ public class Computer {
 
     List<Integer> getComNumBox() {
         List<Integer> comNumBox = new ArrayList<>();
-        for (int i = MIN_POSITION; i < MAX_POSITION; i++) {
+        for (int i = BallPosition.MIN_POSITION; i < BallPosition.MAX_POSITION; i++) {
             int comNum = getDiffNum(comNumBox);
             comNumBox.add(comNum);
         }
